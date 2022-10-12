@@ -1,0 +1,27 @@
+Q)Given an integer array nums, return the largest perimeter of a triangle with a non-zero area, formed from three of these lengths. If it is impossible to form any triangle of a non-zero area, return 0.
+Test case 1:
+Input: nums = [2,1,2]
+Output: 5
+Test Case 2:
+Input: nums = [1,2,1]
+Output: 0
+ 
+Constraints:
+3 <= nums.length <= 104
+1 <= nums[i] <= 106
+
+Logic:
+In this question first, we will sort the array, and then to check whether the input values will form a triangle we will check if b+c>a.
+
+
+ANS)
+class Solution {
+    public int largestPerimeter(int[] arr) {
+         Arrays.sort(arr);
+        int n= arr.length;
+        for (int i =n - 1; i > 1; --i)
+            if (arr[i] < arr[i - 1] + arr[i - 2])
+                return arr[i] + arr[i - 1] + arr[i - 2];
+        return 0;
+    }
+}
