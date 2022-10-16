@@ -18,6 +18,9 @@ Test Case 3:
 Input: s = "luffy is still joyboy"
 Output: 6
 Explanation: The last word is "joyboy" with length 6.
+
+Logic: We have used trim() method to eliminates leading and trailing spaces and lastIndexOf() method returns the last index of the given character value or substring.
+If it is not found, it returns -1. The index counter starts from zero.
  
 Constraints:
 1 <= s.length <= 104
