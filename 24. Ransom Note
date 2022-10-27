@@ -1,0 +1,43 @@
+Question)
+Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+Each letter in magazine can only be used once in ransomNote.
+
+Example 1:
+Input: ransomNote = "a", magazine = "b"
+Output: false
+
+Example 2:
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+
+Example 3:
+Input: ransomNote = "aa", magazine = "aab"
+Output: true
+
+Constraints:
+1 <= ransomNote.length, magazine.length <= 105
+ransomNote and magazine consist of lowercase English letters.
+
+Logic:
+We have first converted the string into character of arrays and then we have used the concept of ascii values to find the ascii value of a-z.
+After that we have incremented the characters according to magazine string and decremented the ransomNote string.
+
+ANSWER)
+class Solution {
+    public boolean canConstruct(String ransomNote, String magazine) {
+        int a[]=new int[26];
+        for(char c:magazine.toCharArray()) //using enhanced for loop and traversing each and every elemnet in the char array.
+        {
+            a[c-'a']++;
+        }
+        for(char c: ransomNote.toCharArray())
+        {
+            if(a[c-'a']==0)
+            {
+                return false;
+            }
+            a[c-'a']--;
+        }
+        return true;
+    }
+}
