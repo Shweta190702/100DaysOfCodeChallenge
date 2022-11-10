@@ -1,0 +1,35 @@
+/*Topic: SORTING
+
+Problem Topic: Bubble Sort
+PROBLEM:
+You are given an array in an unsorted way. You need to sort it using Bubble Sort Algorithm.
+
+EXAMPLE:
+input: int[] arr= {5,4,3,2,1};
+output: 1 2 3 4 5
+
+//Algorithm
+// 1. Compare the first element with the second element
+// 2. If arr[i]>arr[i+1] then swap the elements
+// 3. Repeat step 1 to 2 until the array is sorted
+
+ANSWER)                         */
+public class bubble_sort {
+    public static void main(String[] args) {
+        int[] arr= {5,4,3,2,1};
+        int temp=0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length-1; j++) {
+                if(arr[j]>arr[j+1]){
+                    temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+" ");
+        }
+    }
+    
+}
