@@ -1,0 +1,74 @@
+  /*Topic: SORTING
+Problem Topic: Selection Sort
+PROBLEM:
+You are given an array in an unsorted way. You need to sort it using Selection Sort Algorithm.
+
+Algorithm
+1. Start
+2. Take the array of size n.
+3. Take the elements of array.
+4. Traverse the array from 0 to n-1.
+5. Take the minimum element as i.
+6. Traverse the array from i+1 to n.
+7. If a[j]<a[min], then min=j.
+8. Swap a[i] and a[min].
+9. Print the sorted array.
+10. Stop
+
+EXAMPLE:
+Input:
+Enter the size of array:
+6
+Enter the elements of array:
+85
+79
+14
+1
+36
+55
+Output:
+Sorted array:
+1 14 36 55 79 85                               
+
+
+Code:                       */
+
+import java.util.*;
+
+public class selection_sort {
+    public static void main(String args[])
+    {
+        // int a[]={5,4,3,2,1};
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size of array:");
+        int n=sc.nextInt();
+        int a[]=new int[n];
+        System.out.println("Enter the elements of array:");
+        for(int i=0;i<n;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        for(int i=0;i<n-1;i++)
+        {
+            int min=i;
+            for(int j=i+1;j<n;j++)
+            {
+                if(a[j]<a[min])
+                {
+                    min=j;
+                }
+            }
+            int temp=a[i];
+            a[i]=a[min];
+            a[min]=temp;
+        }
+        System.out.println("Sorted array:");
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+
+
+
