@@ -1,0 +1,68 @@
+/*
+Question: You have to create a text field that will take distance as km and create three buttons in which on clicking one button the distance will be 
+converted into km to cm, then on clicking the next button the distance will convert from km to m and lastly on clicking the last button the km will be
+converted into miles.
+
+The result will be displayed in the other textfield.
+
+CODE:   */
+
+package JAVA;
+import java.awt.*;    
+import java.awt.event.*;    
+  
+public class TextFieldExample2 extends Frame implements ActionListener {    
+      
+    TextField tf1, tf3;    
+    Button b1, b2, b3;   
+    Label l1, l2; 
+     
+    TextFieldExample2() {    
+        l1 = new Label ("Enter distance in km: ");   
+        l1.setBounds(50, 20, 150, 30);    
+        tf1 = new TextField();    
+        tf1.setBounds(50, 50, 150, 50);  
+        l2 = new Label ("Result: "); 
+        l2.setBounds(50, 120, 100, 30);      
+        tf3 = new TextField();    
+        tf3.setBounds(50, 150, 150, 50);     
+        b1 = new Button("km to cm");    
+        b1.setBounds(50, 200, 55, 50);  
+      b2 = new Button("km to m");    
+        b2.setBounds(120,200,50,50);  
+        b3 = new Button("km to miles");    
+    b3.setBounds(200, 200, 70, 50);   
+        b1.addActionListener(this);    //registering the event listener
+b2.addActionListener(this); 
+        b3.addActionListener(this);     
+        add(tf1);    
+        add(tf3);  
+        add(l1);
+        add(l2);
+       add(b1);  
+        add(b2);   
+        add(b3);
+        setSize(500,500);    
+        setLayout(null);    
+        setVisible(true);    
+    }          
+    public void actionPerformed(ActionEvent e) {    
+        String s1 = tf1.getText();        
+        double a = Integer.parseInt(s1);     
+        double c=0;    
+        if (e.getSource() == b1){    
+            c = a*100000 ;    //km to cm
+        }  
+        if(e.getSource() == b2){    
+            c = a*1000;    //km to m
+        } 
+        if(e.getSource() == b3){    
+            c = a*0.621371;    //km to miles
+        }    
+        String result = String.valueOf(c);    
+        tf3.setText(result);    
+    }    
+public static void main(String[] args) {    
+    new TextFieldExample2();    
+}    
+}   
