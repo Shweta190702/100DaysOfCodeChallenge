@@ -1,0 +1,52 @@
+/*
+
+Problem: JAVA ArrayList
+
+Question: Perform basic operations on arraylist
+
+CODE   */
+
+package JAVA;
+import java.util.*;
+
+
+public class Arraylist {
+    public static void main(String[] args)
+    {
+    ArrayList<Integer> ar = new ArrayList<Integer>();
+    ar.add(18);
+    ar.add(9);
+    ar.add(10);
+    ar.add(11);
+    ar.add(17);
+    Iterator<Integer> ir=ar.iterator(); 
+    while(ir.hasNext())
+    {
+        System.out.println(ir.next()+5);
+    }
+    ar.remove(3);
+    System.out.println("After removing 2nd element");
+    System.out.println(ar);
+    Collections.sort(ar);
+    System.out.println(ar);
+    System.out.println(Collections.binarySearch(ar, 18));
+
+    ArrayList<Integer> a1 = new ArrayList<Integer>();
+    ArrayList<Integer> a2 = new ArrayList<Integer>();
+    a1.add(3);
+    a1.add(4);
+    a1.add(9);
+    a2.add(7);
+    a2.add(8);
+    a1.addAll(0, a2);
+    Collections.sort(a1);
+    System.out.println("After merging");
+    System.out.println(a1);
+    
+    
+    
+
+    }
+    
+}
+
