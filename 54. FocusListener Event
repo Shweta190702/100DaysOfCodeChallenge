@@ -1,0 +1,41 @@
+/* 
+Day 54 of #100daysofcodechallenge 
+
+Problem: Event Handling
+
+Question: Demonstrate FocusListener Event
+
+CODE:
+*/
+
+package JAVA;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class FocusListenerTest extends JPanel implements FocusListener {
+   private JTextField textField,txt1;
+   public FocusListenerTest() {
+      setLayout(new BorderLayout());
+      textField = new JTextField();
+      textField.addFocusListener(this);
+      txt1 = new JTextField();
+      add(txt1,BorderLayout.SOUTH);
+      add(textField, BorderLayout.NORTH);
+   }
+   public void focusGained(FocusEvent fe) {
+      System.out.println("Text field gained focus");
+   }
+   public void focusLost(FocusEvent fe) {
+      System.out.println("Text field lost focus");
+   }
+   public static void main(String args[]) {
+      JFrame frame = new JFrame();
+      frame.add(new FocusListenerTest());
+      frame.setTitle("FocusListener Test");
+      frame.setSize(375, 250);
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      frame.setLocationRelativeTo(null);
+      frame.setVisible(true);
+   }
+}
